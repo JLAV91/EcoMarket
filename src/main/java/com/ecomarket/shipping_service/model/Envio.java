@@ -5,7 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Data;
 
-import java.util.Date;
+import java.time.LocalDate;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name = "envio")
@@ -19,9 +21,10 @@ public class Envio {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(unique=true, length=13, nullable=false)
+    @Column(unique = true, length = 13, nullable = false)
     private String estadoEnvio;
 
-    @Column(nullable=false)
-    private Date fechaEnvio;
+    @Column(nullable = false)
+    @JsonFormat(pattern = "dd-MM-yyyy")
+    private LocalDate fechaEnvio;
 }
