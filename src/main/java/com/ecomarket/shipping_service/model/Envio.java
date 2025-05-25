@@ -21,7 +21,7 @@ public class Envio {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(unique = true, length = 13, nullable = false)
+    @Column(length = 13, nullable = false)
     private String estadoEnvio;
 
     @Column(nullable = false)
